@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Alumno
 {
     public static int NUM_ALUMNOS = 0;
+    public static final int  MIN_APROBADO = 5;
     private int numeroAlumno;
     private String nombre;
     private int edad;
@@ -63,5 +64,16 @@ public class Alumno
         }
         if(!notas.isEmpty()){media = media/notas.size();}
         return media;
+    }
+    
+    /**
+     * 
+     */
+    public boolean aprobado(){
+       boolean aprobado = false;
+       if(mediaNotas() >= MIN_APROBADO){
+        aprobado = true;
+       }
+       return aprobado;
     }
 }
