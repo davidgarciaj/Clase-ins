@@ -24,4 +24,32 @@ public class Alumno
         this.edad = edad;
         notas = new ArrayList<>();
     }
+    
+    /**
+     * 
+     */
+    public String getNombre(){
+        return nombre;
+    }
+    
+    /**
+     * 
+     */
+    public int getEdad(){
+        return edad;
+    }
+    
+    /**
+     * 
+     */
+    public int getNumeroAlumno(){
+        return numeroAlumno;
+    }
+    
+    /**
+     * 
+     */
+    public void unaNotaMas(int nota){
+        notas.add(nota);
+    }
 }
