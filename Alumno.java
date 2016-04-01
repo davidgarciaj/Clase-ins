@@ -52,4 +52,16 @@ public class Alumno
     public void unaNotaMas(int nota){
         notas.add(nota);
     }
+    
+    /**
+     * 
+     */
+    public float mediaNotas(){
+        float media = 0;
+        for(int i=0; i < notas.size();i++){
+            media+= notas.get(i);
+        }
+        if(!notas.isEmpty()){media = media/notas.size();}
+        return media;
+    }
 }
