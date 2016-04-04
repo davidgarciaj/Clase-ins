@@ -25,35 +25,35 @@ public class Alumno
         this.edad = edad;
         notas = new ArrayList<>();
     }
-    
+
     /**
      * 
      */
     public String getNombre(){
         return nombre;
     }
-    
+
     /**
      * 
      */
     public int getEdad(){
         return edad;
     }
-    
+
     /**
      * 
      */
     public int getNumeroAlumno(){
         return numeroAlumno;
     }
-    
+
     /**
      * 
      */
-    public void unaNotaMas(int nota){
+    public void addNota(int nota){
         notas.add(nota);
     }
-    
+
     /**
      * 
      */
@@ -65,15 +65,34 @@ public class Alumno
         if(!notas.isEmpty()){media = media/notas.size();}
         return media;
     }
-    
+
     /**
      * 
      */
     public boolean aprobado(){
-       boolean aprobado = false;
-       if(mediaNotas() >= MIN_APROBADO){
-        aprobado = true;
-       }
-       return aprobado;
+        boolean aprobado = false;
+        if(mediaNotas() >= MIN_APROBADO){
+            aprobado = true;
+        }
+        return aprobado;
+    }
+
+    /**
+     * 
+     */
+    public void informacion(){
+        System.out.println("Nombre: " + nombre + "\nEdad: " + edad + "\nNº Alumno: " + numeroAlumno);
+        String notasAlumno = null;
+        if(!notas.isEmpty()){
+            notasAlumno = "Nota" + 1 + " " + notas.get(0) + ".\n";
+            for(int i=1; i < notas.size();i++){
+                notasAlumno+= "Nota" + (i+1) + " " + notas.get(i) + ".\n";
+            }
+        }
+        if(notasAlumno != null){System.out.println(notasAlumno);}
+        System.out.println("La nota media del alumno: " + mediaNotas());
+        String aprobado;
+        if(aprobado()){ aprobado = "aprobado";}else{ aprobado = "suspendido";}
+        System.out.println("El alumno " + nombre + " ha sido " + aprobado + " con sus notas actuales.");
     }
 }
